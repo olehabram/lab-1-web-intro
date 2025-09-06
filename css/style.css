@@ -1,0 +1,191 @@
+/* --- Загальні стилі та змінні для світлої теми --- */
+:root {
+  --background-start: #f4f7f9; /* Світло-сірий фон */
+  --background-end: #e9edf1;
+  --text-primary: #1a202c;     /* Темно-сірий текст */
+  --text-secondary: #5a6678;  /* Світліший сірий текст */
+  --accent-color: #007bff;      /* Яскравий синій акцент */
+  --card-bg: #ffffff;         /* Білий фон для карток */
+  --card-border: #dee2e6;      /* Світла рамка */
+  --success-color: #28a745;    /* Зелений для успіху */
+  --error-color: #dc3545;      /* Червоний для помилок */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* --- Плавний скрол --- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background: linear-gradient(135deg, var(--background-start), var(--background-end));
+  color: var(--text-primary);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.7;
+}
+
+/* --- Заголовок та навігація --- */
+header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--accent-color);
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+nav a:hover, nav a:focus {
+  color: var(--text-primary);
+  border-bottom-color: var(--accent-color);
+}
+
+/* --- Секції у вигляді карток --- */
+main section {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+}
+
+main h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--card-border);
+    margin-bottom: 1.5rem;
+}
+
+/* --- Кнопки та інтерактивні елементи --- */
+button {
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent-color);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+}
+
+button:hover, button:focus {
+  transform: translateY(-2px);
+  background: #0069d9;
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+}
+
+pre {
+  background: #f8f9fa; /* Дуже світлий фон */
+  padding: 1rem;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: var(--text-secondary);
+  border: 1px solid var(--card-border);
+}
+
+/* --- Стилі для форми валідації --- */
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.form-group input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  background-color: #fff;
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* --- Класи для візуалізації валідації --- */
+.form-group input.valid {
+  border-color: var(--success-color);
+}
+.form-group input.valid:focus {
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.25);
+}
+
+.form-group input.invalid {
+  border-color: var(--error-color);
+}
+.form-group input.invalid:focus {
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.9em;
+  min-height: 1.2em;
+  margin-top: 0.5rem;
+}
+
+#formStatus {
+  margin-top: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+#formStatus.success {
+  color: var(--success-color);
+}
+
+#formStatus.error {
+  color: var(--error-color);
+}
+
+/* --- Футер --- */
+footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--card-border);
+  font-size: 0.9em;
+  color: var(--text-secondary);
+}
+
